@@ -1,0 +1,89 @@
+body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url("static\background.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #c53e3e;
+      padding: 10px 20px;
+      color: white;
+      position: relative;
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-img {
+      width: 60px;
+      height: 60px;
+      margin-right: 10px;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      font-weight: bold;
+    }
+
+    .logo-text .top { color: white; font-size: 18px; }
+    .logo-text .bottom { color: black; font-size: 18px; }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .header-title {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .home-link {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .home-link img { width: 30px; height: 30px; }
+
+    .content { margin-top: 40px; padding: 40px; }
+
+    .contact-info {
+      max-width: 400px;
+      background-color: rgba(255,255,255,0.8);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .contact-icon {
+      width: 25px;
+      height: 25px;
+      margin-right: 10px;
+      fill: #c53e3e;
+      flex-shrink: 0;
+    }
+
+    .contact-item span { font-weight: bold; }
