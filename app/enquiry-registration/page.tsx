@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import "./enquiry.css";
+import "./enquiry-registration.css";
 
 export default function EnquiryRegistrationPage() {
   const [id, setId] = useState<number>(1);
@@ -113,7 +113,7 @@ export default function EnquiryRegistrationPage() {
         </label>
         <select name="BloodGroup" onChange={update}>
           <option value="">Select</option>
-          {["A+","A-","B+","B-","O+","O-"].map(bg => (
+          {["A+", "A-", "B+", "B-", "O+", "O-"].map(bg => (
             <option key={bg}>{bg}</option>
           ))}
         </select>

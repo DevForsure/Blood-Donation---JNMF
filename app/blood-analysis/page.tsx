@@ -12,7 +12,7 @@ import {
   Legend,
 } from "chart.js";
 import { Pie, Bar, Doughnut } from "react-chartjs-2";
-import "./bloodanalysis.css";
+import "./blood-analysis.css";
 
 ChartJS.register(
   ArcElement,
