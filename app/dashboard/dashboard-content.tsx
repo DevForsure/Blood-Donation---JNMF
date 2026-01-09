@@ -29,6 +29,11 @@ export default function DashboardContent() {
         return () => clearInterval(interval);
     }, []);
 
+    async function handleLogout() {
+        await fetch("/api/logout", { method: "POST" });
+        window.location.href = "/login";
+    }
+
     return (
         <>
             {showPopup && (
@@ -83,6 +88,10 @@ export default function DashboardContent() {
 
                     <div className="menu-item">
                         <Link href="/olddata">Save Old Data</Link>
+                    </div>
+
+                    <div className="menu-item">
+                        <a onClick={handleLogout}>Logout</a>
                     </div>
                 </nav>
             </header>

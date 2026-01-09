@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import "./home.css";
 
 export const metadata: Metadata = {
   title: "Welcome - Blood Donation Management | JNMF",
@@ -9,62 +10,55 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main style={{ padding: "40px", textAlign: "center", fontFamily: "Arial, sans-serif", backgroundColor: "#fff5f5", minHeight: "100vh" }}>
-      <header style={{ marginBottom: "50px" }}>
-        <Image
-          src="/mphoto.jpg"
-          alt="JNMF Logo"
-          width={150}
-          height={150}
-          style={{ borderRadius: "50%", border: "4px solid #c53e3e" }}
-        />
-        <h1 style={{ color: "#c53e3e", marginTop: "20px" }}>Jagadguru Narendracharya Maharaj Foundation</h1>
-        <h2 style={{ color: "#333" }}>Blood Donation Camp Management</h2>
-      </header>
+    <main>
+      {/* Navbar */}
+      <nav className="navbar">
+        <div className="nav-brand">
+          <Image
+            src="/positive-blood-group-3d-icon-png-download-4897215.webp"
+            alt="JNMF Logo"
+            width={50}
+            height={50}
+          />
+          <span>JNMF Blood Donation</span>
+        </div>
+        <div className="nav-links">
+          <Link href="/login" className="btn btn-secondary">
+            Login
+          </Link>
+        </div>
+      </nav>
 
-      <section style={{ maxWidth: "800px", margin: "0 auto", fontSize: "1.2rem", lineHeight: "1.6", color: "#444" }}>
-        <p>
-          Welcome to the official portal for managing blood donation activities at Jagadguru Narendracharya Maharaj Foundation.
-          Our mission is to bridge the gap between donors and those in need, ensuring a healthy and safe blood supply for the society.
-        </p>
-        <p style={{ fontStyle: "italic", marginTop: "20px", color: "#c53e3e" }}>
-          "तुम्ही जगा दुसऱ्याला जगवा" (Live and let others live)
-        </p>
+      {/* Hero Section */}
+      <section className="hero">
+        <div className="hero-content">
+          <h1 className="hero-title">
+            Jagadguru Narendracharya Maharaj Foundation
+          </h1>
+          <p className="hero-subtitle">
+            Bridging the gap between donors and those in need. Join our mission to ensure a safe and healthy blood supply for society.
+          </p>
+          <span className="marathi-quote-hero">
+            "तुम्ही जगा दुसऱ्याला जगवा"
+          </span>
+          <div className="hero-buttons">
+            <Link href="/login" className="btn btn-primary btn-large">
+              Donate Now (Login)
+            </Link>
+          </div>
+        </div>
       </section>
 
-      <div style={{ marginTop: "50px", display: "flex", justifyContent: "center", gap: "20px" }}>
-        <Link
-          href="/login"
-          style={{
-            padding: "15px 40px",
-            backgroundColor: "#c53e3e",
-            color: "white",
-            textDecoration: "none",
-            borderRadius: "50px",
-            fontWeight: "bold",
-            transition: "transform 0.2s"
-          }}
-        >
-          Access Portal (Login)
-        </Link>
-        <Link
-          href="/contact"
-          style={{
-            padding: "15px 40px",
-            backgroundColor: "#fff",
-            color: "#c53e3e",
-            border: "2px solid #c53e3e",
-            textDecoration: "none",
-            borderRadius: "50px",
-            fontWeight: "bold"
-          }}
-        >
-          Contact Us
-        </Link>
-      </div>
 
-      <footer style={{ marginTop: "100px", color: "#666", fontSize: "0.9rem" }}>
-        © 2025 Jagadguru Ramanandacharya Narendracharya Maharaj Foundation (JNMF). All Rights Reserved.
+
+      {/* Footer */}
+      <footer className="footer">
+        <div className="footer-content">
+
+          <p>
+            © 2025 Jagadguru Ramanandacharya Narendracharya Maharaj Foundation. All Rights Reserved.
+          </p>
+        </div>
       </footer>
     </main>
   );
