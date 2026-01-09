@@ -11,7 +11,6 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main>
-      {/* Navbar */}
       <nav className="navbar">
         <div className="nav-brand">
           <Image
@@ -20,7 +19,7 @@ export default function Home() {
             width={50}
             height={50}
           />
-          <span>JNMF Blood Donation</span>
+          <span>Blood Donation</span>
         </div>
         <div className="nav-links">
           <Link href="/login" className="btn btn-secondary">
@@ -50,8 +49,6 @@ export default function Home() {
       </section>
 
 
-
-      {/* Footer */}
       <footer className="footer">
         <div className="footer-content">
 
