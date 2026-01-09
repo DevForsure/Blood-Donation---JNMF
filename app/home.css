@@ -94,7 +94,7 @@ main {
 }
 
 
-HERO SECTION */ .hero {
+.hero {
     flex-grow: 1;
 
     width: 100%;

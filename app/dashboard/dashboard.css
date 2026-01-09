@@ -24,8 +24,7 @@ body {
   width: 100%;
 }
 
-
-SIDEBAR */ .sidebar {
+.sidebar {
   width: var(--sidebar-width);
   background-color: var(--primary-red);
   color: white;
@@ -132,7 +131,7 @@ SIDEBAR */ .sidebar {
 }
 
 
-MAIN CONTENT AREA */ .main-content {
+.main-content {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
