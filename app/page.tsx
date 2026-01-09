@@ -30,20 +30,32 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="hero">
-        <div className="hero-content">
-          <h1 className="hero-title">
-            Jagadguru Ramanandacharya Narendracharya Maharaj Foundation
-          </h1>
-          <p className="hero-subtitle">
-            Bridging the gap between donors and those in need. Join our mission to ensure a safe and healthy blood supply for society.
-          </p>
-          <span className="marathi-quote-hero">
-            "तुम्ही जगा दुसऱ्याला जगवा"
-          </span>
-          <div className="hero-buttons">
-            <Link href="/login" className="btn btn-primary btn-large">
-              Donate Now (Login)
-            </Link>
+        <div className="hero-container">
+          <div className="hero-content">
+            <h1 className="hero-title">
+              Jagadguru Ramanandacharya Narendracharya Maharaj Foundation
+            </h1>
+            <p className="hero-subtitle">
+              Bridging the gap between donors and those in need. Join our mission to ensure a safe and healthy blood supply for society.
+            </p>
+            <span className="marathi-quote-hero">
+              "तुम्ही जगा दुसऱ्याला जगवा"
+            </span>
+            <div className="hero-buttons">
+              <Link href="/login" className="btn btn-primary btn-large">
+                Donate Now (Login)
+              </Link>
+            </div>
+          </div>
+          <div className="founder-image-container">
+            <Image
+              src="/raja.avif"
+              alt="Founder"
+              width={400}
+              height={500}
+              className="founder-image"
+              priority
+            />
           </div>
         </div>
       </section>

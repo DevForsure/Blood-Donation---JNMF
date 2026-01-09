@@ -105,31 +105,36 @@ main {
     flex-grow: 1;
     /* Take remaining space */
     width: 100%;
-    background: linear-gradient(135deg, rgba(139, 0, 0, 0.9), rgba(50, 0, 0, 0.7)), url('/background.jpg');
+    background: linear-gradient(135deg, rgba(139, 0, 0, 0.95), rgba(50, 0, 0, 0.85)), url('/background.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
     color: white;
-    padding: 20px;
+    padding: 40px 20px;
     box-sizing: border-box;
     overflow: hidden;
-    /* Ensure content doesn't spill */
+}
+
+.hero-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    animation: fadeInUp 1s ease-out;
 }
 
 .hero-content {
-    max-width: 900px;
-    animation: fadeInUp 1s ease-out;
-    padding-bottom: 40px;
-    /* Visual balance slightly above center looks better */
+    flex: 1;
+    text-align: left;
 }
 
 .hero-title {
-    font-size: 3.5rem;
-    /* Slightly smaller to ensure fit */
+    font-size: 3.2rem;
     font-weight: 800;
     margin-bottom: 20px;
     text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -137,13 +142,11 @@ main {
 }
 
 .hero-subtitle {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin-bottom: 30px;
     opacity: 0.9;
     font-weight: 300;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 600px;
 }
 
 .marathi-quote-hero {
@@ -155,10 +158,31 @@ main {
     display: block;
 }
 
+.founder-image-container {
+    flex: 0 0 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.founder-image {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(182, 165, 72, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.founder-image:hover {
+    transform: scale(1.02);
+}
+
 .hero-buttons {
     display: flex;
     gap: 20px;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .btn-large {
@@ -215,9 +239,39 @@ main {
 /* 
   RESPONSIVENESS 
 */
+@media (max-width: 992px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-subtitle {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .founder-image-container {
+        flex: 0 0 auto;
+        max-width: 300px;
+    }
+
+    .hero-title {
+        font-size: 2.8rem;
+    }
+}
+
 @media (max-width: 768px) {
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
     .hero-subtitle {
@@ -238,6 +292,8 @@ main {
         width: 100%;
         max-width: 250px;
         gap: 10px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .btn-large {
