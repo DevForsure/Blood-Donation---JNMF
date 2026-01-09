@@ -3,9 +3,9 @@ import LoginForm from "./login-form";
 
 export const metadata: Metadata = {
   title: "Login - Blood Donation Management | JNMF",
-  description: "Securely log in to the Jagadguru Narendracharya Maharaj Foundation Blood Donation Management portal. Manage donors, registrations, and blood analysis.",
+  description: "Securely log in to the Jagadguru Narendracharyaji Foundation Blood Donation Management portal. Manage donors, registrations, and blood analysis.",
   robots: {
-    index: false, // Don't index login page normally
+    index: false,
     follow: true,
   },
 };

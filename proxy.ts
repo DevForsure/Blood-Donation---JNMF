@@ -4,7 +4,7 @@ import type { NextRequest } from "next/server";
 export function proxy(req: NextRequest) {
     const { pathname } = req.nextUrl;
 
-    // Allow static images and specific paths without authentication
+
     const isPublicAsset = pathname.match(/\.(jpg|jpeg|png|gif|svg|webp|avif)$/i);
     if (
         isPublicAsset ||

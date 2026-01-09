@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -12,7 +13,7 @@ html, body {
   width: 100%;
 }
 
-/* Left Panel - Image & Text */
+
 .left-panel {
   width: 40%;
   background: radial-gradient(circle at center, #ffffff 60%, #f9f9f9 100%);
@@ -49,13 +50,13 @@ html, body {
   padding: 10px 30px;
   border-radius: 20px;
   background-color: #fcfbf5;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-/* Right Panel - Login Form */
+
 .right-panel {
   width: 60%;
   background-color: #8B0000;
@@ -85,13 +86,11 @@ html, body {
 
 .login-form h1 {
   font-size: 32px;
-  color: #bfae5f; /* Gold-ish color */
+  color: #bfae5f;
   margin-bottom: 40px;
   text-align: left;
   font-weight: bold;
-  /* Centered in design but left aligned in code usually looks weird if inputs are full width, 
-     design shows 'Login' centered relative to form content? Actually looked centered in image. */
-  text-align: center; 
+  text-align: center;
 }
 
 .login-form label {
@@ -103,7 +102,7 @@ html, body {
   font-size: 16px;
 }
 
-/* Input Fields - Underline Style */
+
 .login-form input[type="text"],
 .login-form input[type="password"] {
   width: 100%;
@@ -124,7 +123,7 @@ html, body {
   border-bottom: 2px solid #ffd700;
 }
 
-/* Show Password Checkbox */
+
 .show-password {
   margin-top: 15px;
   color: white;
@@ -139,20 +138,18 @@ html, body {
 .show-password input[type="checkbox"] {
   accent-color: #b30000;
   width: 16px;
-  height: 16px; 
+  height: 16px;
 }
 
-/* Submit Button */
+
 .login-form input[type="submit"] {
   margin-top: 40px;
   width: 100%;
   padding: 15px;
-  background-color: #b30000; /* Slightly lighter red for button */
-  /* Or make it darker? Design looks like a dark red pill on dark red bg? 
-     Actually design update shows a distinct red button on the dark red background.
-     Let's try a gradient or just a slightly different shade. */
-  background-color: #a00000; 
-  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  background-color: #b30000;
+
+  background-color: #a00000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   border: none;
   color: white;
   font-weight: bold;
@@ -168,28 +165,23 @@ html, body {
 
 .login-form input[type="submit"]:active {
   transform: scale(0.98);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* 
-   RESPONSIVENESS 
-   Mobile devices (< 768px)
-*/
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
-    height: auto; /* Allow scrolling on small screens */
+    height: auto;
     min-height: 100vh;
   }
 
   .left-panel {
     width: 100%;
     padding: 30px 20px;
-    order: 1; /* Keep it first or move below? Usually login is primary. 
-               But design implies a cover page. Let's keep order. */
+    order: 1;
     min-height: 40vh;
   }
-  
+
   .left-panel .logo {
     max-width: 180px;
   }
@@ -208,22 +200,22 @@ html, body {
   .login-form {
     width: 100%;
   }
-  
+
   .right-panel .blood-logo {
-     top: 15px;
-     right: 15px;
-     width: 50px;
+    top: 15px;
+    right: 15px;
+    width: 50px;
   }
 }
 
-/* Animations */
+
 #popup {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.95);
+  background-color: rgba(0, 0, 0, 0.95);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -240,9 +232,18 @@ html, body {
 }
 
 @keyframes fadeOut {
-  0% { opacity: 1; }
-  80% { opacity: 1; }
-  100% { opacity: 0; visibility: hidden; }
+  0% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 .popup-image {
@@ -254,12 +255,23 @@ html, body {
 }
 
 @keyframes flyAcross {
-  0% { transform: translateX(-200px) translateY(0) scale(1); opacity: 1; }
-  50% { transform: translateX(0) translateY(-40px) scale(1.1); opacity: 1; }
-  100% { transform: translateX(200px) translateY(0) scale(1); opacity: 0; }
+  0% {
+    transform: translateX(-200px) translateY(0) scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateX(0) translateY(-40px) scale(1.1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(200px) translateY(0) scale(1);
+    opacity: 0;
+  }
 }
 
-/* Success/Error Popups */
+
 #popup-message {
   position: fixed;
   top: 50%;
@@ -272,16 +284,29 @@ html, body {
   font-weight: bold;
   text-align: center;
   z-index: 10000;
-  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   animation: fadeIn 0.3s ease-out;
 }
+
 @keyframes fadeIn {
-  from { opacity: 0; transform: translate(-50%, -40%); }
-  to { opacity: 1; transform: translate(-50%, -50%); }
+  from {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
 }
 
-.success { background-color: #4CAF50; }
-.error { background-color: #b30000; }
+.success {
+  background-color: #4CAF50;
+}
+
+.error {
+  background-color: #b30000;
+}
 
 #form-popup {
   position: fixed;
@@ -296,5 +321,5 @@ html, body {
   font-weight: bold;
   z-index: 10000;
   display: none;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }

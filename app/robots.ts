@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
         rules: {
             userAgent: '*',
             allow: '/',
-            disallow: ['/api/', '/dashboard/'], // Keep dashboard and api private
+            disallow: ['/api/', '/dashboard/'],
         },
         sitemap: 'https://blood-donation-jnmf.devforsure.online/sitemap.xml',
     }

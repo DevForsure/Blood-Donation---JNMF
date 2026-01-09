@@ -9,7 +9,6 @@ export default function DashboardContent() {
     const [popupMessage, setPopupMessage] = useState("");
     const [sidebarOpen, setSidebarOpen] = useState(false);
 
-    // Auto-hide popup
     useEffect(() => {
         if (showPopup) {
             const t = setTimeout(() => setShowPopup(false), 3000);
@@ -17,7 +16,6 @@ export default function DashboardContent() {
         }
     }, [showPopup]);
 
-    // Slider logic
     useEffect(() => {
         const slides = document.querySelectorAll(".slider-img");
         let index = 0;
@@ -45,13 +43,13 @@ export default function DashboardContent() {
 
     return (
         <div className="dashboard-container">
-            {/* Sidebar Overlay (Mobile) */}
+
             <div
                 className={`sidebar-overlay ${sidebarOpen ? "active" : ""}`}
                 onClick={() => setSidebarOpen(false)}
             ></div>
 
-            {/* Sidebar */}
+
             <aside className={`sidebar ${sidebarOpen ? "open" : ""}`}>
                 <div className="sidebar-header">
                     <Image
@@ -121,9 +119,9 @@ export default function DashboardContent() {
                 </div>
             </aside>
 
-            {/* Main Content */}
+
             <main className="main-content">
-                {/* Mobile Header */}
+
                 <header className="mobile-header">
                     <div className="logo-section">
                         <Image
@@ -148,10 +146,10 @@ export default function DashboardContent() {
 
                     <div className="dashboard-header">
                         <h1 className="page-title">
-                            Jagadguru Ramanandacharya Narendracharya Maharaj Foundation
+                            Jagadguru Ramanandacharya Narendracharyaji Foundation
                         </h1>
                         <p className="page-subtitle">
-                            The Jagadguru Ramanandacharya Narendracharya Maharaj Foundation at Nanijdham, Ratnagiri, Maharashtra, was founded by Shrimad Jagadguru Ramanandacharya Narendracharyaji Maharaj. It serves society through education, healthcare, blood donation, food distribution,
+                            The Jagadguru Ramanandacharya Narendracharyaji Foundation at Nanijdham, Ratnagiri, Maharashtra, was founded by Shrimad Jagadguru Ramanandacharya Narendracharyaji Maharaj. It serves society through education, healthcare, blood donation, food distribution,
                             de-addiction programs, and spiritual guidance, working on the principle of “Spirituality in the Service of Humanity.” The foundation supports the poor and needy,
                             runs schools and Vedic learning centers, and has been honored with awards like the International Peace Honour, Veer Savarkar Award, and Indian Red Cross Society Award.
                         </p>
@@ -168,7 +166,7 @@ export default function DashboardContent() {
                     <div className="card">
                         <h2>🌿 Vasundhara Paayi Dindi</h2>
                         <p className="card-text">
-                            The Jagadguru Ramanandacharya Narendracharya Maharaj Foundation is deeply engaged in
+                            The Jagadguru Ramanandacharya Narendracharyaji Foundation is deeply engaged in
                             both spiritual and social service, with initiatives like the Vasundhara Paayi Dindi and
                             large-scale blood donation drives forming its core activities. <br /><br />
 

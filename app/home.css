@@ -1,4 +1,3 @@
-/* Global Root Variables if not already defined, but scoped here for home page consistency */
 :root {
     --primary-red: #8B0000;
     --primary-gold: #b6a548;
@@ -14,7 +13,7 @@ body {
     height: 100%;
     width: 100%;
     overflow: hidden;
-    /* Prevent scrolling */
+
 }
 
 main {
@@ -23,13 +22,9 @@ main {
     flex-direction: column;
 }
 
-/* 
-  NAVBAR 
-*/
+
 .navbar {
-    /* Changed from fixed to static/flex item since we have a fixed height container 
-     OR keep fixed and use padding. 
-     Let's use static/relative within the flex container for simplicity in calculating 100% height. */
+
     position: relative;
     width: 100%;
     padding: 15px 40px;
@@ -41,7 +36,7 @@ main {
     z-index: 1000;
     box-sizing: border-box;
     flex-shrink: 0;
-    /* Don't shrink */
+
 }
 
 .nav-brand {
@@ -98,12 +93,10 @@ main {
     color: white;
 }
 
-/* 
-  HERO SECTION 
-*/
-.hero {
+
+HERO SECTION */ .hero {
     flex-grow: 1;
-    /* Take remaining space */
+
     width: 100%;
     background: linear-gradient(135deg, rgba(139, 0, 0, 0.95), rgba(50, 0, 0, 0.85)), url('/background.jpg');
     background-size: cover;
@@ -190,21 +183,14 @@ main {
     font-size: 1.1rem;
 }
 
-/* 
-  FOOTER 
-*/
+
 .footer {
-    /* Overlay footer on top of hero or stack below? 
-     If stack below, hero gets smaller. 
-     Design wise, a transparent overlay at bottom of hero looks cleaner for viewport apps.
-     Or just a small bar at the bottom.
-  */
-    position: absolute;
+
     bottom: 0;
     left: 0;
     width: 100%;
     background-color: transparent;
-    /* Transparent looks better on hero */
+
     color: #ddd;
     padding: 15px 20px;
     text-align: center;
@@ -221,9 +207,7 @@ main {
     gap: 5px;
 }
 
-/* 
-  ANIMATIONS 
-*/
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -236,9 +220,7 @@ main {
     }
 }
 
-/* 
-  RESPONSIVENESS 
-*/
+
 @media (max-width: 992px) {
     .hero-container {
         flex-direction: column;
@@ -300,7 +282,7 @@ main {
         width: 100%;
         box-sizing: border-box;
         padding: 12px 20px;
-        /* Reduced side padding */
+
         font-size: 1rem;
     }
 
@@ -314,7 +296,7 @@ main {
     }
 }
 
-/* Extra small devices (phones, 480px and down) */
+
 @media (max-width: 480px) {
     .navbar {
         padding: 10px 15px;
@@ -326,8 +308,8 @@ main {
 
     .nav-brand span {
         font-size: 14px;
-        /* Optionally hide text if it overlaps */
-        /* display: none; */
+
+
     }
 
     .nav-links .btn {
@@ -366,7 +348,7 @@ main {
     }
 }
 
-/* Optimize Short Screens (Landscape mobile) */
+
 @media (max-height: 600px) and (orientation: landscape) {
     .hero-title {
         font-size: 1.8rem;
@@ -377,7 +359,7 @@ main {
         font-size: 0.9rem;
         margin-bottom: 10px;
         display: none;
-        /* Hide subtitle to save vertical space if needed */
+
     }
 
     .marathi-quote-hero {
@@ -396,7 +378,7 @@ main {
 
     .hero-buttons {
         flex-direction: row;
-        /* Side by side in landscape */
+
         gap: 10px;
     }
 

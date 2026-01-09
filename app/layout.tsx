@@ -14,14 +14,14 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://blood-donation-jnmf.devforsure.online"),
-  title: "Blood Donation - Jagadguru Narendracharya Maharaj Foundation",
-  description: "A blood donation platform by Jagadguru Narendracharya Maharaj Foundation (JNMF) to help save lives. Developed by DevForsure.",
-  keywords: ["Blood Donation", "JNMF", "Jagadguru Narendracharya Maharaj Foundation", "Ratnagiri", "Maharashtra", "Save Lives", "Donation Registration"],
+  title: "Blood Donation - Jagadguru Narendracharyaji Foundation",
+  description: "A blood donation platform by Jagadguru Narendracharyaji Foundation (JNMF) to help save lives. Developed by DevForsure.",
+  keywords: ["Blood Donation", "JNMF", "Jagadguru Narendracharyaji Foundation", "Ratnagiri", "Maharashtra", "Save Lives", "Donation Registration"],
   authors: [{ name: "DevForsure" }],
   openGraph: {
-    title: "Blood Donation - Jagadguru Narendracharya Maharaj Foundation",
+    title: "Blood Donation - Jagadguru Narendracharyaji Foundation",
     description: "Join our mission to save lives through blood donation. Managed by JNMF.",
-    url: "https://blood-donation-jnmf.devforsure.online", // Replace with actual URL if known
+    url: "https://blood-donation-jnmf.devforsure.online",
     siteName: "JNMF Blood Donation",
     images: [
       {
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blood Donation - Jagadguru Narendracharya Maharaj Foundation",
+    title: "Blood Donation - Jagadguru Narendracharyaji Foundation",
     description: "A blood donation platform by JNMF to help save lives.",
     images: ["/mphoto.jpg"],
   },

@@ -39,89 +39,68 @@ export default function BloodAnalysisPage() {
     setTotal(data.total);
   }
 
+  const chartColors = [
+    "rgba(139, 0, 0, 0.8)",
+    "rgba(182, 165, 72, 0.8)",
+    "rgba(51, 51, 51, 0.8)",
+    "rgba(168, 50, 50, 0.8)",
+    "rgba(212, 193, 91, 0.8)",
+    "rgba(85, 85, 85, 0.8)",
+  ];
+
+  const chartBorderColors = chartColors.map(c => c.replace("0.8", "1"));
+
   const labels = rows.map(r => r.label);
   const values = rows.map(r => r.count);
 
   return (
-    <>
-      <header>
+    <div className="analysis-page-container">
+      <header className="analysis-header">
         <div className="logo-section">
           <img
             src="/positive-blood-group-3d-icon-png-download-4897215.webp"
             className="logo-img"
+            alt="JNMF Logo"
           />
           <div className="logo-text">
-            <div className="top">Blood</div>
-            <div className="bottom">Donation</div>
+            <div>Blood Donation</div>
           </div>
         </div>
 
-        <div className="header-right">
-          <div className="header-title">Blood Analysis</div>
-          <Link href="/dashboard" className="home-link">
-            Home
-            <img src="/home-icon_1076610-21321.avif" />
-          </Link>
-        </div>
+        <Link href="/dashboard" className="back-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+          <span>Back to Dashboard</span>
+        </Link>
       </header>
 
-      <div className="content">
-        <button className="refresh-btn" onClick={loadData}>
-          🔄 Refresh Data
-        </button>
+      <main className="analysis-content">
+        <div className="controls-row">
+          <button className="refresh-btn" onClick={loadData}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="23 4 23 10 17 10"></polyline>
+              <polyline points="1 20 1 14 7 14"></polyline>
+              <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+            </svg>
+            Refresh Data
+          </button>
+        </div>
 
-        <div className="charts-row">
-          {/* Pie Chart */}
-          <div className="chart-container">
-            <h3>Overall Pie Chart</h3>
-            <Pie
-              data={{
-                labels,
-                datasets: [
-                  {
-                    data: values,
-                    backgroundColor: [
-                      "#FF6384",
-                      "#36A2EB",
-                      "#FFCE56",
-                      "#4CAF50",
-                      "#9C27B0",
-                      "#FF9800",
-                    ],
-                  },
-                ],
-              }}
-            />
-          </div>
+        <div className="charts-grid">
 
-          {/* Bar Chart */}
-          <div className="chart-container">
-            <h3>Overall Bar Chart</h3>
-            <Bar
-              data={{
-                labels,
-                datasets: [
-                  {
-                    label: "Total Count",
-                    data: values,
-                    backgroundColor: "#c53e3e",
-                  },
-                ],
-              }}
-            />
-          </div>
-
-          {/* Card */}
-          <div className="chart-container">
-            <h3>Entries Summary</h3>
-            <div className="card">
-              {total} / {target}
+          <div className="chart-card">
+            <h3>Registered Donors</h3>
+            <div className="summary-value">
+              <span className="summary-number">{total}</span>
+              <span className="summary-target">Target: {target} entries</span>
             </div>
           </div>
 
-          {/* Donut Chart */}
-          <div className="chart-container">
-            <h3>Target Completion</h3>
+
+          <div className="chart-card">
+            <h3>Mission Progress</h3>
             <Doughnut
               data={{
                 labels: ["Completed", "Remaining"],
@@ -131,14 +110,76 @@ export default function BloodAnalysisPage() {
                       Math.min(total, target),
                       Math.max(target - total, 0),
                     ],
-                    backgroundColor: ["#4CAF50", "#FF5252"],
+                    backgroundColor: ["#4CAF50", "#eee"],
+                    hoverBackgroundColor: ["#45a049", "#e0e0e0"],
+                    borderWidth: 0,
                   },
                 ],
+              }}
+              options={{
+                cutout: "75%",
+                plugins: {
+                  legend: { position: 'bottom' }
+                }
+              }}
+            />
+          </div>
+
+
+          <div className="chart-card">
+            <h3>Blood Group Distribution</h3>
+            <Pie
+              data={{
+                labels,
+                datasets: [
+                  {
+                    data: values,
+                    backgroundColor: chartColors,
+                    borderColor: "white",
+                    borderWidth: 2,
+                  },
+                ],
+              }}
+              options={{
+                plugins: {
+                  legend: { position: 'bottom' }
+                }
+              }}
+            />
+          </div>
+
+
+          <div className="chart-card">
+            <h3>Donor Counts by Group</h3>
+            <Bar
+              data={{
+                labels,
+                datasets: [
+                  {
+                    label: "Count",
+                    data: values,
+                    backgroundColor: "rgba(139, 0, 0, 0.7)",
+                    borderColor: "rgba(139, 0, 0, 1)",
+                    borderWidth: 1,
+                    borderRadius: 8,
+                  },
+                ],
+              }}
+              options={{
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    ticks: { precision: 0 }
+                  }
+                },
+                plugins: {
+                  legend: { display: false }
+                }
               }}
             />
           </div>
         </div>
-      </div>
-    </>
+      </main>
+    </div>
   );
 }

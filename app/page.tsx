@@ -5,7 +5,7 @@ import "./home.css";
 
 export const metadata: Metadata = {
   title: "Welcome - Blood Donation Management | JNMF",
-  description: "Join the Jagadguru Narendracharya Maharaj Foundation (JNMF) blood donation campaign. Donate blood, save lives, and manage your registrations with ease.",
+  description: "Join the Jagadguru Narendracharyaji Foundation (JNMF) blood donation campaign. Donate blood, save lives, and manage your registrations with ease.",
 };
 
 export default function Home() {
@@ -28,12 +28,11 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section */}
       <section className="hero">
         <div className="hero-container">
           <div className="hero-content">
             <h1 className="hero-title">
-              Jagadguru Ramanandacharya Narendracharya Maharaj Foundation
+              Jagadguru Ramanandacharya Narendracharyaji Foundation
             </h1>
             <p className="hero-subtitle">
               Bridging the gap between donors and those in need. Join our mission to ensure a safe and healthy blood supply for society.

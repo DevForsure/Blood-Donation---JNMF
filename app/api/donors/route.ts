@@ -14,6 +14,7 @@ export async function GET() {
       DateofBirth,
       Email
     FROM registration
+    ORDER BY Id DESC
   `).all();
 
   return NextResponse.json(rows);

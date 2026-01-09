@@ -1,4 +1,3 @@
-/* Global Vars locally scoped if needed, matching home.css */
 :root {
   --sidebar-width: 280px;
   --header-height: 60px;
@@ -15,20 +14,18 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--bg-light);
   overflow: hidden;
-  /* App-like feel */
+
 }
 
-/* Layout Container */
+
 .dashboard-container {
   display: flex;
   height: 100vh;
   width: 100%;
 }
 
-/* 
-  SIDEBAR 
-*/
-.sidebar {
+
+SIDEBAR */ .sidebar {
   width: var(--sidebar-width);
   background-color: var(--primary-red);
   color: white;
@@ -134,10 +131,8 @@ body {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* 
-  MAIN CONTENT AREA
-*/
-.main-content {
+
+MAIN CONTENT AREA */ .main-content {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -146,7 +141,7 @@ body {
   position: relative;
 }
 
-/* Mobile Header (Only visible on mobile) */
+
 .mobile-header {
   display: none;
   height: var(--header-height);
@@ -167,7 +162,7 @@ body {
   color: var(--text-dark);
 }
 
-/* Scrollable Content */
+
 .content-scroll-area {
   flex-grow: 1;
   overflow-y: auto;
@@ -194,7 +189,7 @@ body {
   line-height: 1.6;
 }
 
-/* Cards */
+
 .card {
   background: white;
   border-radius: 12px;
@@ -220,7 +215,7 @@ body {
   font-size: 1rem;
 }
 
-/* Slider */
+
 .slider-container {
   width: 100%;
   max-width: 700px;
@@ -247,7 +242,7 @@ body {
   opacity: 1;
 }
 
-/* Footer */
+
 .dashboard-footer {
   text-align: center;
   padding: 20px;
@@ -257,7 +252,7 @@ body {
   margin-top: auto;
 }
 
-/* Popup */
+
 #popup-message {
   position: fixed;
   top: 20px;
@@ -284,9 +279,7 @@ body {
   }
 }
 
-/* 
-  RESPONSIVENESS 
-*/
+
 @media (max-width: 900px) {
   .sidebar {
     position: fixed;
@@ -316,7 +309,7 @@ body {
   }
 }
 
-/* Overlay for mobile sidebar */
+
 .sidebar-overlay {
   display: none;
   position: fixed;

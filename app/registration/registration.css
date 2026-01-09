@@ -25,7 +25,7 @@ body {
   overflow: hidden;
 }
 
-/* Header styling matched to contact page */
+
 .registration-header {
   display: flex;
   justify-content: space-between;
@@ -76,7 +76,7 @@ body {
   transform: translateY(-2px);
 }
 
-/* Main Content Area */
+
 .registration-content {
   flex-grow: 1;
   display: flex;
@@ -140,7 +140,7 @@ form {
   overflow-y: auto;
 }
 
-/* Scrollbar styling for form */
+
 form::-webkit-scrollbar {
   width: 6px;
 }
@@ -304,7 +304,7 @@ textarea {
   }
 }
 
-/* Responsiveness */
+
 @media (max-width: 768px) {
   .registration-header {
     padding: 15px 20px;

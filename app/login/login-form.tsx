@@ -9,7 +9,6 @@ export default function LoginForm() {
     const [popupMessage, setPopupMessage] = useState("");
     const [popupType, setPopupType] = useState<"success" | "error" | "">("");
 
-    // Auto-hide popup
     useEffect(() => {
         if (popupMessage) {
             const t = setTimeout(() => {
@@ -67,7 +66,6 @@ export default function LoginForm() {
 
     return (
         <>
-            {/* Startup animation */}
             <div id="popup">
                 <div id="popup-content">
                     <Image
@@ -103,7 +101,7 @@ export default function LoginForm() {
                     <div className="title">
                         Blood Donation
                         <br />
-                        Jagadguru Ramanandacharya Narendracharya Maharaj Foundation
+                        Jagadguru Ramanandacharya Narendracharyaji Foundation
                     </div>
                     <div className="marathi-quote">❀ तुम्ही जगा दुसऱ्याला जगवा ❀</div>
                 </div>

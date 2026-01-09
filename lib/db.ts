@@ -15,10 +15,8 @@ function getDb(): Database.Database {
   const dbPath = path.join(dataDir, "blood.db");
   _db = new Database(dbPath);
 
-  // Enable concurrency
   _db.pragma("journal_mode = WAL");
 
-  // ---------- TABLES ----------
   _db.prepare(`
     CREATE TABLE IF NOT EXISTS login (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -71,7 +69,6 @@ function getDb(): Database.Database {
   return _db;
 }
 
-// Export a proxy that initializes the DB on first access
 export const db = new Proxy({} as Database.Database, {
   get(target, prop, receiver) {
     const instance = getDb();

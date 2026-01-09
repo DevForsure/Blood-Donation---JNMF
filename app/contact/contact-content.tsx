@@ -30,12 +30,12 @@ export default function ContactContent() {
                     <div className="card-header">
                         <h1 className="card-title">Get in Touch</h1>
                         <p className="card-subtitle">
-                            We are here to help. Reach out to the Jagadguru Narendracharya Maharaj Foundation for any assistance regarding blood donation or our services.
+                            We are here to help. Reach out to the Jagadguru Narendracharyaji Foundation for any assistance regarding blood donation or our services.
                         </p>
                     </div>
 
                     <div className="info-grid">
-                        {/* Address */}
+
                         <div className="info-item">
                             <div className="icon-wrapper">
                                 <svg className="info-icon" viewBox="0 0 24 24">
@@ -50,7 +50,7 @@ export default function ContactContent() {
                             </div>
                         </div>
 
-                        {/* Phone */}
+
                         <div className="info-item">
                             <div className="icon-wrapper">
                                 <svg className="info-icon" viewBox="0 0 24 24">
@@ -65,7 +65,7 @@ export default function ContactContent() {
                             </div>
                         </div>
 
-                        {/* Website */}
+
                         <div className="info-item">
                             <div className="icon-wrapper">
                                 <svg className="info-icon" viewBox="0 0 24 24">
@@ -81,7 +81,7 @@ export default function ContactContent() {
                         </div>
                     </div>
 
-                    {/* Optional: Embed a map or footer strip here if needed */}
+
                 </div>
             </main>
         </div>

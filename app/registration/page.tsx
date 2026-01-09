@@ -8,7 +8,6 @@ export default function RegistrationPage() {
   const [form, setForm] = useState<any>({});
   const [success, setSuccess] = useState(false);
 
-  // 🔹 Load first ID
   useEffect(() => {
     fetchNextId();
   }, []);
