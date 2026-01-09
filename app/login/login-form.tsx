@@ -93,10 +93,10 @@ export default function LoginForm() {
             <div className="container">
                 <div className="left-panel">
                     <Image
-                        src="/mphoto.jpg"
+                        src="/Slider_Swami.png"
                         className="logo"
                         alt="Blood Donation Logo"
-                        width={400}
+                        width={500}
                         height={400}
                         priority
                     />
@@ -123,6 +123,7 @@ export default function LoginForm() {
                         <label htmlFor="username">Enter Username:</label>
                         <input
                             id="username"
+                            type="text"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
                             autoComplete="username"
