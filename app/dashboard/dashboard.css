@@ -1,6 +1,6 @@
 /* Global Vars locally scoped if needed, matching home.css */
 :root {
-  --sidebar-width: 260px;
+  --sidebar-width: 280px;
   --header-height: 60px;
   --primary-red: #8B0000;
   --primary-gold: #b6a548;
@@ -223,7 +223,7 @@ body {
 /* Slider */
 .slider-container {
   width: 100%;
-  max-width: 900px;
+  max-width: 700px;
   margin: 40px auto;
   border-radius: 15px;
   overflow: hidden;
