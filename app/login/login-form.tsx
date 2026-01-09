@@ -93,11 +93,11 @@ export default function LoginForm() {
             <div className="container">
                 <div className="left-panel">
                     <Image
-                        src="/mphoto.jpg"
+                        src="/mphoto.png"
                         className="logo"
                         alt="Blood Donation Logo"
-                        width={500}
-                        height={400}
+                        width={400}
+                        height={300}
                         priority
                     />
                     <div className="title">
