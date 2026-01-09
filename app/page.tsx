@@ -32,7 +32,7 @@ export default function Home() {
       <section className="hero">
         <div className="hero-content">
           <h1 className="hero-title">
-            Jagadguru Narendracharya Maharaj Foundation
+            Jagadguru Ramanandacharya Narendracharya Maharaj Foundation
           </h1>
           <p className="hero-subtitle">
             Bridging the gap between donors and those in need. Join our mission to ensure a safe and healthy blood supply for society.
@@ -53,7 +53,7 @@ export default function Home() {
         <div className="footer-content">
 
           <p>
-            © 2025 Jagadguru Ramanandacharya Narendracharya Maharaj Foundation. All Rights Reserved.
+            Bhandewadi Sevakendra
           </p>
         </div>
       </footer>

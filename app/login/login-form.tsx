@@ -93,7 +93,7 @@ export default function LoginForm() {
             <div className="container">
                 <div className="left-panel">
                     <Image
-                        src="/Slider_Swami.png"
+                        src="/mphoto.jpg"
                         className="logo"
                         alt="Blood Donation Logo"
                         width={500}
@@ -103,7 +103,7 @@ export default function LoginForm() {
                     <div className="title">
                         Blood Donation
                         <br />
-                        Jagadguru Narendracharya Maharaj Foundation
+                        Jagadguru Ramanandacharya Narendracharya Maharaj Foundation
                     </div>
                     <div className="marathi-quote">❀ तुम्ही जगा दुसऱ्याला जगवा ❀</div>
                 </div>
