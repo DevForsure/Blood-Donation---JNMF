@@ -48,7 +48,7 @@ export default function Home() {
           </div>
           <div className="founder-image-container">
             <Image
-              src="/raja.avif"
+              src="/raja.png"
               alt="Founder"
               width={400}
               height={500}
@@ -57,17 +57,15 @@ export default function Home() {
             />
           </div>
         </div>
+        <footer className="footer">
+          <div className="footer-content">
+
+            <p>
+              Bhandewadi Sevakendra
+            </p>
+          </div>
+        </footer>
       </section>
-
-
-      <footer className="footer">
-        <div className="footer-content">
-
-          <p>
-            Bhandewadi Sevakendra
-          </p>
-        </div>
-      </footer>
     </main>
   );
 }

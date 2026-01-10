@@ -5,7 +5,7 @@ import "./registration.css";
 
 export default function RegistrationPage() {
   const [id, setId] = useState<number>(1);
-  const [form, setForm] = useState<any>({});
+  const [form, setForm] = useState<any>({ Sevakendra: "Bhandewadi" });
   const [success, setSuccess] = useState(false);
 
   useEffect(() => {
@@ -19,7 +19,11 @@ export default function RegistrationPage() {
   }
 
   function update(e: any) {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    let value = e.target.value;
+    if (e.target.name === "Name") {
+      value = value.replace(/\b\w/g, (c: string) => c.toUpperCase());
+    }
+    setForm({ ...form, [e.target.name]: value });
   }
 
   async function submit(e: any) {
@@ -60,7 +64,7 @@ export default function RegistrationPage() {
 
       if (res.ok) {
         setSuccess(true);
-        setForm({});
+        setForm({ Sevakendra: "Bhandewadi" });
         fetchNextId();
         setTimeout(() => setSuccess(false), 5000);
       } else {

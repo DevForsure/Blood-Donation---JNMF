@@ -95,6 +95,7 @@ main {
 
 
 .hero {
+    position: relative;
     flex-grow: 1;
 
     width: 100%;
@@ -185,7 +186,7 @@ main {
 
 
 .footer {
-
+    position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
