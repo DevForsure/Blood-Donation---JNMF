@@ -25,6 +25,7 @@ ChartJS.register(
 
 export default function BloodAnalysisPage() {
   const [rows, setRows] = useState<any[]>([]);
+  const [yearlyData, setYearlyData] = useState<any[]>([]);
   const [total, setTotal] = useState(0);
   const target = 200;
 
@@ -36,6 +37,7 @@ export default function BloodAnalysisPage() {
     const res = await fetch("/api/blood-analysis");
     const data = await res.json();
     setRows(data.data);
+    setYearlyData(data.yearlyData || []);
     setTotal(data.total);
   }
 
@@ -52,6 +54,9 @@ export default function BloodAnalysisPage() {
 
   const labels = rows.map(r => r.label);
   const values = rows.map(r => r.count);
+
+  const yearlyLabels = yearlyData.map(y => y.year || 'Unknown');
+  const yearlyPercentages = yearlyData.map(y => (total > 0 ? (y.count / total) * 100 : 0).toFixed(1));
 
   return (
     <div className="analysis-page-container">
@@ -174,6 +179,42 @@ export default function BloodAnalysisPage() {
                 },
                 plugins: {
                   legend: { display: false }
+                }
+              }}
+            />
+          </div>
+
+          <div className="chart-card">
+            <h3>Yearly Donation %</h3>
+            <Bar
+              data={{
+                labels: yearlyLabels,
+                datasets: [
+                  {
+                    label: "Percentage",
+                    data: yearlyPercentages,
+                    backgroundColor: "rgba(54, 162, 235, 0.7)",
+                    borderColor: "rgba(54, 162, 235, 1)",
+                    borderWidth: 1,
+                    borderRadius: 8,
+                  },
+                ],
+              }}
+              options={{
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    max: 100,
+                    ticks: { callback: (v) => v + '%' }
+                  }
+                },
+                plugins: {
+                  legend: { display: false },
+                  tooltip: {
+                    callbacks: {
+                      label: (context) => context.raw + '%'
+                    }
+                  }
                 }
               }}
             />

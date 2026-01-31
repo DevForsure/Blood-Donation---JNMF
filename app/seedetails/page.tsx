@@ -19,6 +19,7 @@ type Donor = {
 };
 export default function SeeDetailsPage() {
   const [donors, setDonors] = useState<Donor[]>([]);
+  const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
 
@@ -28,6 +29,16 @@ export default function SeeDetailsPage() {
     setDonors(data);
     setCurrentPage(1);
   }
+
+  const filteredDonors = donors.filter((d) => {
+    const term = searchTerm.toLowerCase();
+    return (
+      d.Id.toString().includes(term) ||
+      (d.Name && d.Name.toLowerCase().includes(term)) ||
+      (d.PhoneNumber && d.PhoneNumber.includes(term)) ||
+      (d.Bloodgroup && d.Bloodgroup.toLowerCase().includes(term))
+    );
+  });
 
   function printPDF() {
     const doc = new jsPDF({
@@ -122,6 +133,36 @@ export default function SeeDetailsPage() {
               <p className="card-subtitle">Comprehensive list of all registered blood donors.</p>
             </div>
             <div className="action-buttons">
+              <div className="search-box">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input
+                  type="text"
+                  placeholder="Search by ID, Name, Contact..."
+                  value={searchTerm}
+                  onChange={(e) => {
+                    setSearchTerm(e.target.value);
+                    setCurrentPage(1);
+                  }}
+                />
+                {searchTerm && (
+                  <button
+                    className="clear-search-btn"
+                    onClick={() => {
+                      setSearchTerm("");
+                      setCurrentPage(1);
+                    }}
+                    title="Clear search"
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="18" y1="6" x2="6" y2="18"></line>
+                      <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                  </button>
+                )}
+              </div>
               <button className="btn view-btn" onClick={loadData}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
@@ -162,8 +203,14 @@ export default function SeeDetailsPage() {
                       Click "View Records" to load donor data.
                     </td>
                   </tr>
+                ) : filteredDonors.length === 0 ? (
+                  <tr>
+                    <td colSpan={9} style={{ textAlign: 'center', padding: '40px', color: '#888' }}>
+                      No donors found matching "{searchTerm}"
+                    </td>
+                  </tr>
                 ) : (
-                  donors.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage).map((d) => (
+                  filteredDonors.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage).map((d) => (
                     <tr key={d.Id}>
                       <td>{d.Id}</td>
                       <td>{d.Name}</td>
@@ -181,7 +228,7 @@ export default function SeeDetailsPage() {
             </table>
           </div>
 
-          {donors.length > itemsPerPage && (
+          {filteredDonors.length > itemsPerPage && (
             <div className="pagination">
               <button
                 className="pag-btn"
@@ -191,11 +238,11 @@ export default function SeeDetailsPage() {
                 Previous
               </button>
               <span className="pag-info">
-                Page {currentPage} of {Math.ceil(donors.length / itemsPerPage)}
+                Page {currentPage} of {Math.ceil(filteredDonors.length / itemsPerPage)}
               </span>
               <button
                 className="pag-btn"
-                disabled={currentPage === Math.ceil(donors.length / itemsPerPage)}
+                disabled={currentPage === Math.ceil(filteredDonors.length / itemsPerPage)}
                 onClick={() => setCurrentPage(p => p + 1)}
               >
                 Next

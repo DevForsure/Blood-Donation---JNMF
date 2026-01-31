@@ -73,9 +73,6 @@ export default function DashboardContent() {
 
                     <div className="nav-group">
                         <div className="nav-group-title">Services</div>
-                        <a href="#" className="nav-item" onClick={handleComingSoon}>
-                            Enquiry Registration
-                        </a>
                         <Link href="/blood-analysis" className="nav-item" onClick={() => setSidebarOpen(false)}>
                             Blood Analysis
                         </Link>
@@ -86,9 +83,9 @@ export default function DashboardContent() {
                         <Link href="/registration" className="nav-item" onClick={() => setSidebarOpen(false)}>
                             Donor Registration
                         </Link>
-                        <a href="#" className="nav-item" onClick={handleComingSoon}>
+                        <Link href="/update-info" className="nav-item" onClick={() => setSidebarOpen(false)}>
                             Update Information
-                        </a>
+                        </Link>
                     </div>
 
                     <div className="nav-group">
@@ -96,9 +93,9 @@ export default function DashboardContent() {
                         <Link href="/seedetails" className="nav-item" onClick={() => setSidebarOpen(false)}>
                             Call Details
                         </Link>
-                        <a href="#" className="nav-item" onClick={handleComingSoon}>
+                        <Link href="/send-message" className="nav-item" onClick={() => setSidebarOpen(false)}>
                             Send Message
-                        </a>
+                        </Link>
                     </div>
 
                     <div className="nav-group">
@@ -106,9 +103,9 @@ export default function DashboardContent() {
                         <Link href="/contact" className="nav-item" onClick={() => setSidebarOpen(false)}>
                             Contact Support
                         </Link>
-                        <a href="#" className="nav-item" onClick={handleComingSoon}>
+                        <Link href="/save-old-data" className="nav-item" onClick={() => setSidebarOpen(false)}>
                             Save Old Data
-                        </a>
+                        </Link>
                     </div>
                 </nav>
 

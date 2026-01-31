@@ -60,7 +60,7 @@ function getDb(): Database.Database {
       Phone TEXT,
       Gender TEXT,
       BloodGroup TEXT,
-      DateOfBirth TEXT,
+      Year TEXT,
       Address TEXT,
       Sevakendra TEXT
     )

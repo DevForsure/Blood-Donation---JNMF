@@ -12,6 +12,13 @@ export async function GET() {
 
   return NextResponse.json({
     data: rows,
+    yearlyData: db.prepare(`
+      SELECT Year as year, COUNT(*) as count 
+      FROM old_data 
+      WHERE Year IS NOT NULL
+      GROUP BY Year 
+      ORDER BY Year
+    `).all(),
     total,
     target: 200,
   });

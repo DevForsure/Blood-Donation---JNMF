@@ -28,11 +28,11 @@ model old_data {
   ID          Int     @id @default(autoincrement())
   Name        String?
   Phone       String?
-  Gender      String?
-  BloodGroup  String?
-  DateOfBirth String?
-  Address     String?
-  Sevakendra  String?
+  Gender     String?
+  BloodGroup String?
+  Year       String?
+  Address    String?
+  Sevakendra String?
 }
 
 model registration {

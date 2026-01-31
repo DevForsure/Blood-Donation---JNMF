@@ -1,20 +1,28 @@
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
 
-export async function GET() {
-  const rows = db.prepare(`
-    SELECT
-      ID,
-      Name,
-      Phone,
-      Gender,
-      BloodGroup,
-      DateOfBirth,
-      Address,
-      Sevakendra
-    FROM old_data
-    ORDER BY ID ASC
-  `).all();
+export async function GET(req: Request) {
+  try {
+    const { searchParams } = new URL(req.url);
+    const year = searchParams.get("year");
 
-  return NextResponse.json(rows);
+    let query = `
+      SELECT ID as Id, Name, Phone as PhoneNumber, BloodGroup as Bloodgroup, Year
+      FROM old_data
+    `;
+    const params = [];
+
+    if (year) {
+      query += ` WHERE Year = ?`;
+      params.push(year);
+    }
+
+    query += ` ORDER BY ID DESC`;
+
+    const rows = db.prepare(query).all(...params);
+
+    return NextResponse.json(rows);
+  } catch (error: any) {
+    return NextResponse.json({ error: error.message }, { status: 500 });
+  }
 }

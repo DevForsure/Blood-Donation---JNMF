@@ -6,7 +6,7 @@ export async function POST(req: Request) {
 
   db.prepare(`
     INSERT INTO old_data
-    (ID, Name, Phone, Gender, BloodGroup, DateOfBirth, Address, Sevakendra)
+    (ID, Name, Phone, Gender, BloodGroup, Year, Address, Sevakendra)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?)
   `).run(
     body.id,
@@ -14,9 +14,9 @@ export async function POST(req: Request) {
     body.phone,
     body.gender,
     body.bloodgroup,
-    body.dob || null,
-    body.address || null,
-    body.sevakendra
+    body.year || null,
+    body.address || null, // Optional
+    body.sevakendra || null // Optional
   );
 
   return NextResponse.json({ success: true });
