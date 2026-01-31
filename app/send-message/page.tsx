@@ -23,7 +23,6 @@ export default function SendMessagePage() {
     const [years, setYears] = useState<string[]>([]);
     const [selectedYear, setSelectedYear] = useState("");
 
-    // Load distinct years on mount
     useEffect(() => {
         fetch("/api/olddata/years")
             .then(res => res.json())
@@ -31,7 +30,6 @@ export default function SendMessagePage() {
             .catch(console.error);
     }, []);
 
-    // Load data when year is selected
     useEffect(() => {
         if (!selectedYear) {
             setDonors([]);
@@ -266,7 +264,7 @@ export default function SendMessagePage() {
                                                 <input
                                                     type="checkbox"
                                                     checked={selectedIds.includes(d.Id)}
-                                                    onChange={() => { }} // handled by row click
+                                                    onChange={() => { }}
                                                 />
                                             </td>
                                             <td>{d.Id}</td>

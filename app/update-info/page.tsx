@@ -106,7 +106,6 @@ export default function UpdateInfoPage() {
         doc.save("donor_details.pdf");
     }
 
-    // Edit Functionality
     const [editingDonor, setEditingDonor] = useState<Donor | null>(null);
 
     function handleEdit(donor: Donor) {
@@ -286,7 +285,6 @@ export default function UpdateInfoPage() {
                 </div>
             </main>
 
-            {/* Edit Modal */}
             {editingDonor && (
                 <div className="modal-overlay" onClick={handleCloseModal}>
                     <div className="modal-content" onClick={e => e.stopPropagation()}>

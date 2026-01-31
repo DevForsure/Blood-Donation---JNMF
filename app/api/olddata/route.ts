@@ -15,8 +15,8 @@ export async function POST(req: Request) {
     body.gender,
     body.bloodgroup,
     body.year || null,
-    body.address || null, // Optional
-    body.sevakendra || null // Optional
+    body.address || null,
+    body.sevakendra || null
   );
 
   return NextResponse.json({ success: true });
