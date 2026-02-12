@@ -56,7 +56,7 @@ export default function BloodAnalysisPage() {
   const values = rows.map(r => r.count);
 
   const yearlyLabels = yearlyData.map(y => y.year || 'Unknown');
-  const yearlyPercentages = yearlyData.map(y => (total > 0 ? (y.count / total) * 100 : 0).toFixed(1));
+  const yearlyPercentages = yearlyData.map(y => ((y.count / target) * 100).toFixed(1));
 
   return (
     <div className="analysis-page-container">
