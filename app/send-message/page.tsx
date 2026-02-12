@@ -77,16 +77,6 @@ export default function SendMessagePage() {
             setSelectedIds([...selectedIds, id]);
         }
     }
-
-    async function handleSendMessage() {
-        if (selectedIds.length === 0) return;
-        setSending(true);
-
-        alert("Comming Soon");
-        setSending(false);
-        setSelectedIds([]);
-    }
-
     function printPDF() {
         const doc = new jsPDF({
             orientation: "landscape",
@@ -115,7 +105,7 @@ export default function SendMessagePage() {
         const currentDate = new Date().toLocaleDateString();
         doc.setFontSize(12);
         doc.setFont("helvetica", "bold");
-        doc.text("Old Donor Data", 40, 90);
+        doc.text(`Old Donor Data - ${selectedYear}`, 40, 90);
         doc.text(
             currentDate,
             doc.internal.pageSize.getWidth() - 40,
@@ -142,8 +132,19 @@ export default function SendMessagePage() {
             styles: { fontSize: 10 },
         });
 
-        doc.save("old_donor_data.pdf");
+        const fileName = selectedYear ? `old_donor_data_${selectedYear}.pdf` : "old_donor_data.pdf";
+        doc.save(fileName);
     }
+    async function handleSendMessage() {
+        if (selectedIds.length === 0) return;
+        setSending(true);
+
+        alert("Comming Soon");
+        setSending(false);
+        setSelectedIds([]);
+    }
+
+
 
     return (
         <div className="details-page-container">
